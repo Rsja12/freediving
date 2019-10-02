@@ -3,4 +3,4 @@ require './lib/freediving'
 # require "bundler/setup"
 # require "freediving"
 
-Freediving::CLI..call new
+Freediving::CLI.new.call 

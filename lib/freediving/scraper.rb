@@ -13,7 +13,7 @@ class Freediving::Scraper
 
         # Test commit
 
-        binding.pry 
+        # binding.pry 
     end
     
 
