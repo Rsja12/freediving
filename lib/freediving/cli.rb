@@ -27,28 +27,22 @@ class Freediving::CLI
             puts "Enter the number of the discipline you want to learn more about, or type 'exit'."
 
             input = gets.strip 
-            case input 
-            when "1"
-                puts "More on 1"
-            when "2"
-                puts "More on 2"
-            when "3"
-                puts "More on 3"
-            when "4"
-                puts "More on 4"
-            when "5"
-                puts "More on 5"
-            when "6"
-                Freediving::Scraper.scrape_site
-            else
-                puts "Please enter a valid command or type 'exit' to exit the program. "
-            end
-        end 
-    end
+           if input.to_i > 0
+            the_discipline = @disciplines[input.to_i - 1]
+            puts "#{the_discipline.description}"
+           elsif input == "list"
+            list_disciplines
+           else
+            puts "Not sure what you mean by that..."
+        end
+    end 
 
     def goodbye
         puts "Bye!"
     end
+end
+
 
 
 end
+# Freediving::Scraper.scrape_site
