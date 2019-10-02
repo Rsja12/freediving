@@ -1,7 +1,10 @@
+require 'pry'
+
 class Freediving::CLI 
 
 
     def call
+        # Freediving::Discipline.all 
         list_disciplines
         menu
         goodbye
@@ -9,13 +12,16 @@ class Freediving::CLI
     
     def list_disciplines 
         puts "Welcome! Check out this list of freediving disciplines" 
-        Freediving::Discipline.all 
+        Freediving::Discipline.all.each.with_index(1) do |dis, i|
+            puts "#{i}. #{dis.name}"
+        end
+        # binding.pry
     end
 
     def menu 
         input = nil
         while input != "exit"
-            puts "Enter the number of the discipline you want to learn more about, or type 'list' to see the list of disciplines again, or type 'exit'."
+            puts "Enter the number of the discipline you want to learn more about, or type 'exit'."
             input = gets.strip 
             case input 
             when "1"
@@ -28,10 +34,8 @@ class Freediving::CLI
                 puts "More on 4"
             when "5"
                 puts "More on 5"
-            when "list"
-                list_disciplines
             else
-                puts "Please enter 'list' to see the list or 'exit'. "
+                puts "Please enter a valid command or type 'exit' to exit the program. "
             end
         end 
     end
