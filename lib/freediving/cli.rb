@@ -29,16 +29,18 @@ class Freediving::CLI
             input = gets.strip 
            if input.to_i > 0
             the_discipline = @disciplines[input.to_i - 1]
+            puts ""
             puts "#{the_discipline.description}"
-           elsif input == "list"
-            list_disciplines
-           else
-            puts "Not sure what you mean by that..."
+           elsif input != "exit"
+            puts ""
+            puts "Not sure what you mean by that... Please type the number for one of the disciplines."
         end
     end 
 
     def goodbye
-        puts "Bye!"
+        puts ""
+        puts "Thanks for checking us out!"
+        puts ""
     end
 end
 
