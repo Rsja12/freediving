@@ -16,6 +16,7 @@ class Freediving::CLI
             puts "#{i}. #{dis.name}"
             # Test Commit
             # Another line
+            # And another one
         end
         # binding.pry
     end
