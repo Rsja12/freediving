@@ -13,12 +13,8 @@ class Freediving::CLI
         puts "Welcome! Check out this list of freediving disciplines" 
         Freediving::Discipline.all.each.with_index(1) do |dis, i|
             puts "#{i}. #{dis.name}"
-            # Test Commit
-            # Another line
-            # And another one
-            # 4 commits
         end
-        # binding.pry
+      
     end
 
     def menu 
@@ -36,7 +32,7 @@ class Freediving::CLI
             when "4"
                 puts "More on 4"
             when "5"
-                puts "More on 5"
+                Freediving::Scraper.scrape_site
             else
                 puts "Please enter a valid command or type 'exit' to exit the program. "
             end
