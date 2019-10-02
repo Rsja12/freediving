@@ -14,6 +14,8 @@ class Freediving::CLI
         puts "Welcome! Check out this list of freediving disciplines" 
         Freediving::Discipline.all.each.with_index(1) do |dis, i|
             puts "#{i}. #{dis.name}"
+            # Test Commit
+            # Another line
         end
         # binding.pry
     end
