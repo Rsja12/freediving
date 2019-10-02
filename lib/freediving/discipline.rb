@@ -3,17 +3,10 @@ require "pry"
 class Freediving::Discipline 
 
     attr_accessor :name
+    
     @@all = []
-    def self.all 
-    #     puts <<-DOC
-    # 1. Static Apnea
-    # 2. Dynamic Apnea
-    # 3. Constant Weight Apnea
-    # 4. Variable Weight Apnea
-    # 5. No Limits Apnea
-    #     DOC
-        # binding.pry 
 
+    def self.all 
         discipline1 = self.new 
         discipline1.name = "Static Apnea"
         @@all << discipline1

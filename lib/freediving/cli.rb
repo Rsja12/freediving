@@ -4,7 +4,6 @@ class Freediving::CLI
 
 
     def call
-        # Freediving::Discipline.all 
         list_disciplines
         menu
         goodbye
