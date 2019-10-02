@@ -1,6 +1,4 @@
-require "freediving/version"
+require_relative './freediving/version'
+require_relative './freediving/cli'
+require_relative './freediving/discipline'
 
-module Freediving
-  class Error < StandardError; end
-  # Your code goes here...
-end
