@@ -1,13 +1,11 @@
-# TEST
+
 require "pry"
+
 class Freediving::Discipline 
 
     attr_accessor :name
 
     @@all = []
-    def initialize
-        
-    end
 
     def self.all 
         discipline1 = self.new 

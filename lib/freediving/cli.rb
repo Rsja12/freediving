@@ -34,6 +34,8 @@ class Freediving::CLI
            elsif input != "exit"
             puts ""
             puts "Not sure what you mean by that... Please type the number for one of the disciplines."
+           else
+            Freediving::Scraper.scrape_site
         end
     end 
 
@@ -47,4 +49,5 @@ end
 
 
 end
-# Freediving::Scraper.scrape_site
+
+# testing commit
