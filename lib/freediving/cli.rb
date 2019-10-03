@@ -29,13 +29,9 @@ class Freediving::CLI
             input = gets.strip 
            if input.to_i > 0
             the_discipline = @disciplines[input.to_i - 1]
+            
             puts ""
             puts "#{the_discipline.description}"
-           elsif input != "exit"
-            puts ""
-            puts "Not sure what you mean by that... Please type the number for one of the disciplines."
-           else
-            Freediving::Scraper.scrape_site
         end
     end 
 
@@ -50,4 +46,3 @@ end
 
 end
 
-# testing commit
