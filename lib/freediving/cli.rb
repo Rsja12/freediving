@@ -29,9 +29,10 @@ class Freediving::CLI
             input = gets.strip 
            if input.to_i > 0
             the_discipline = @disciplines[input.to_i - 1]
-            Freediving::Scraper.scrape_descriptions(the_discipline)
-            puts ""
-            puts "#{the_discipline.description}"
+            @descriptions = Freediving::Scraper.scrape_descriptions
+            @descriptions.each do |des|
+                puts "#{des}"
+            end
         end
     end 
 

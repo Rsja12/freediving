@@ -12,7 +12,7 @@ class Freediving::Discipline
     end
 
     def self.all_descriptions 
-        Freediving::Scraper.scrape_descriptions(the_discipline)
+        Freediving::Scraper.scrape_descriptions
     end
  
  

@@ -10,7 +10,7 @@ class Freediving::Scraper
         discipline = @doc.css(".text-center h3").text.split(/(?<=APNEA)/)
     end
     
-    def self.scrape_descriptions(the_discipline)
+    def self.scrape_descriptions
         arr = @doc.css(".text-center p").text
         desc = arr.split(/(?=[A-Z])/).drop(4)
         last3 = desc.last(3)
@@ -26,7 +26,7 @@ class Freediving::Scraper
 
         discipline_description = first_part.flatten 
         
-        binding.pry 
+        # binding.pry 
     end
 
     
