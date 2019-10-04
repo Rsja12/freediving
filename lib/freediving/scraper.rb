@@ -13,8 +13,10 @@ class Freediving::Scraper
     def self.scrape_descriptions(the_discipline)
         arr = @doc.css(".text-center p").text
         desc = arr.split(/(?=[A-Z])/).drop(4)
-        # last3 = desc.last(3)
-        # last3.join(" ")
+        last3 = desc.last(3)
+        lastd = last3.join(" ")
+        new_arr = desc.shift(5)
+        new_arr << lastd 
         binding.pry 
     end
 
