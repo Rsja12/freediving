@@ -17,6 +17,15 @@ class Freediving::Scraper
         lastd = last3.join(" ")
         new_arr = desc.shift(5)
         new_arr << lastd 
+
+        first_part = new_arr.shift(2)
+        last_part = new_arr.pop(2)
+        middle = new_arr.join(" ")
+        first_part << middle
+        first_part << last_part
+
+        discipline_description = first_part.flatten 
+        
         binding.pry 
     end
 
@@ -29,3 +38,7 @@ end
 # split2 = split1.drop(4)
 # split3 = split2.last(3)
 # last3 = split3.join(" ")
+
+
+
+# Use insert method when putting elements back into middle of array
