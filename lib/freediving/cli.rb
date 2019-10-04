@@ -16,6 +16,7 @@ class Freediving::CLI
         @disciplines = Freediving::Discipline.all
         @disciplines.each.with_index(1) do |dis, i|
             puts "#{i}. #{dis}"
+            puts ""
         end
       
     end
@@ -27,13 +28,14 @@ class Freediving::CLI
             puts "Enter the number of the discipline you want to learn more about, or type 'exit'."
 
             input = gets.strip 
-           if input.to_i > 0
-            the_discipline = @disciplines[input.to_i - 1]
-            @descriptions = Freediving::Scraper.scrape_descriptions
-            @descriptions.each do |des|
-                puts "#{des}"
+            if input.to_i > 0
+                the_discipline = @disciplines[input.to_i - 1]
+                @descriptions = Freediving::Discipline.all_descriptions
+                @descriptions.each do |des|
+                    puts "#{des}"
+                end
             end
-        end
+         end
     end 
 
     def goodbye
@@ -41,9 +43,11 @@ class Freediving::CLI
         puts "Thanks for checking us out!"
         puts ""
     end
+
+    
 end
 
 
 
-end
+
 
