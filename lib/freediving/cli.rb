@@ -1,11 +1,10 @@
 require 'pry'
 
-class Freediving::CLI 
-
-
+class CLI 
+    
     def call
         list_disciplines
-        give_descriptions
+        list_descriptions
         goodbye
     end
     
@@ -13,90 +12,42 @@ class Freediving::CLI
         puts ""
         puts "Welcome! Check out this list of freediving disciplines!" 
         puts ""
-        @disciplines = Freediving::Discipline.all
-        @disciplines.each.with_index(1) do |dis, i|
-            puts "#{i}. #{dis}"
+
+        @disciplines = Discipline.all
+        @disciplines.each.with_index(1) do |discipline, idx|
+            puts "#{idx}. #{discipline}"
             puts ""
         end
     end
 
-    # def menu 
-    #     input = nil
-    #     while input != "exit"
-    #         puts ""
-    #         puts "Enter the number of the discipline you want to learn more about, or type 'exit'."
-    #         if input.to_i > 0
-    #             the_discipline = @disciplines[input.to_i - 1]
-    #             @descriptions = Freediving::Discipline.all_descriptions
-    #             @descriptions.each do |des|
-    #                 puts "#{des}"
-    #             end
-    #         end
-    #      end
-    # end 
-
     def list_descriptions
+        input = nil 
+        while input != "exit"
+            puts ""
+            puts "Enter the number of the discipline you want to learn more about! Or type 'exit'."
         
+            input = gets.chomp 
+            @descriptions = Discipline.all_descriptions
+
+            if input.to_i > 0 && input.to_i <= 5
+                puts ""
+                puts @descriptions[input.to_i - 1]   
+            elsif input == "list"
+                list_disciplines
+            else
+                puts ""
+                puts "Sorry, please enter a number from 1-5, or 'list', or 'exit'."
+            end
+        end
     end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # def give_descriptions
-    #     input = gets.strip
-    #     case input
-    #     when "1"
-    #         puts ""
-    #         puts Freediving::Discipline.all_descriptions[0]
-    #     when "2"
-    #         puts ""
-    #         puts Freediving::Discipline.all_descriptions[1]
-    #     when "3"
-    #         puts ""
-    #         puts Freediving::Discipline.all_descriptions[2]
-    #     when "4"
-    #         puts ""
-    #         puts Freediving::Discipline.all_descriptions[3]
-    #     when "5"
-    #         puts ""
-    #         puts Freediving::Discipline.all_descriptions[4]
-    #     when "list"
-    #         list_disciplines
-    #     when "exit"
-    #         goodbye
-    #     else
-    #         puts "Please enter a valid command."
-    #     end
-    # end
-
-    
-
-
-
-
-
-
 
     def goodbye
         puts ""
-        puts "Thanks for checking us out!"
+        puts "Thanks for stopping by!"
         puts ""
     end
-
-    
+   
 end
-
-
 
 
 

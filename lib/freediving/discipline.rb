@@ -1,18 +1,15 @@
 
 require "pry"
 
-class Freediving::Discipline 
-
+class Discipline 
 
     def self.all 
-        Freediving::Scraper.scrape_site
+       Scraper.scrape_site
     end
 
     def self.all_descriptions 
-        Freediving::Scraper.scrape_descriptions
+        Scraper.scrape_descriptions
     end
- 
- 
     
 end
 

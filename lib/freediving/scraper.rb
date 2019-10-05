@@ -2,7 +2,7 @@ require 'open-uri'
 require 'pry'
 require 'nokogiri'
 
-class Freediving::Scraper
+class Scraper
 
     @doc = Nokogiri::HTML(open("https://www.spotmydive.com/en/news/freediving-world-record-by-discipline-aida-ssi-padi"))
     
@@ -24,22 +24,7 @@ class Freediving::Scraper
         first_part << middle
         first_part << last_part
 
-        descriptions_array = first_part.flatten 
-        
-        
-        # binding.pry 
+        descriptions_array = first_part.flatten  
     end
 
-    
-
 end
-
-
-# split1 = description.split(/(?=[A-Z])/) 
-# split2 = split1.drop(4)
-# split3 = split2.last(3)
-# last3 = split3.join(" ")
-
-
-
-# Use insert method when putting elements back into middle of array
