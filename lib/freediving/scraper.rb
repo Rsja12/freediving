@@ -24,7 +24,7 @@ class Freediving::Scraper
         first_part << middle
         first_part << last_part
 
-        discipline_description = first_part.flatten 
+        descriptions_array = first_part.flatten 
         
         
         # binding.pry 
