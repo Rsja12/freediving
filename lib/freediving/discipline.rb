@@ -3,9 +3,6 @@ require "pry"
 
 class Freediving::Discipline 
 
-    attr_accessor :name
-
-    @@all = []
 
     def self.all 
         Freediving::Scraper.scrape_site

@@ -26,6 +26,7 @@ class Freediving::Scraper
 
         discipline_description = first_part.flatten 
         
+        
         # binding.pry 
     end
 
