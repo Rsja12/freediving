@@ -35,32 +35,49 @@ class Freediving::CLI
     #      end
     # end 
 
-    def give_descriptions
-        input = gets.strip
-        case input
-        when "1"
-            puts ""
-            puts Freediving::Discipline.all_descriptions[0]
-        when "2"
-            puts ""
-            puts Freediving::Discipline.all_descriptions[1]
-        when "3"
-            puts ""
-            puts Freediving::Discipline.all_descriptions[2]
-        when "4"
-            puts ""
-            puts Freediving::Discipline.all_descriptions[3]
-        when "5"
-            puts ""
-            puts Freediving::Discipline.all_descriptions[4]
-        when "list"
-            list_disciplines
-        when "exit"
-            goodbye
-        else
-            puts "Please enter a valid command."
-        end
+    def list_descriptions
+        
     end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # def give_descriptions
+    #     input = gets.strip
+    #     case input
+    #     when "1"
+    #         puts ""
+    #         puts Freediving::Discipline.all_descriptions[0]
+    #     when "2"
+    #         puts ""
+    #         puts Freediving::Discipline.all_descriptions[1]
+    #     when "3"
+    #         puts ""
+    #         puts Freediving::Discipline.all_descriptions[2]
+    #     when "4"
+    #         puts ""
+    #         puts Freediving::Discipline.all_descriptions[3]
+    #     when "5"
+    #         puts ""
+    #         puts Freediving::Discipline.all_descriptions[4]
+    #     when "list"
+    #         list_disciplines
+    #     when "exit"
+    #         goodbye
+    #     else
+    #         puts "Please enter a valid command."
+    #     end
+    # end
 
     
 
