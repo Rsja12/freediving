@@ -24,12 +24,12 @@ class CLI
         input = nil 
         while input != "exit"
             puts ""
-            puts "Enter the number of the discipline you want to learn more about! Or type 'exit'."
+            puts "Enter the number of the discipline you want to learn more about! Or type 'exit'. You can also type 'list' to see the list again."
         
             input = gets.chomp 
             @descriptions = Discipline.all_descriptions
 
-            if input.to_i > 0 && input.to_i <= 5
+            if input.to_i > 0 && input.to_i <= Discipline.all.count
                 puts ""
                 puts @descriptions[input.to_i - 1]   
             elsif input == "list"
@@ -47,6 +47,7 @@ class CLI
         puts ""
     end
    
+    # test
 end
 
 
