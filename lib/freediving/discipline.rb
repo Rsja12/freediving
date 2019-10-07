@@ -3,16 +3,26 @@ require "pry"
 
 class Discipline 
 
-    def self.all 
-       Scraper.scrape_site
-    end
+    attr_accessor :name, :description
 
-    def self.all_descriptions 
-        Scraper.scrape_descriptions
+    @@all = [] 
+
+    def initialize(name=nil, description=nil)
+        @name = name 
+        @description = description 
+        @@all << self
     end
+    
+   def self.all 
+    @@all 
+   end
+
+   def self.discipline_maker
+   
+   end
     
 end
 
-
+binding.pry 
 
 

@@ -8,17 +8,17 @@ class CLI
         goodbye
     end
     
-    def list_disciplines 
-        puts ""
-        puts "Welcome! Check out this list of freediving disciplines!" 
-        puts ""
+    # def list_disciplines 
+    #     puts ""
+    #     puts "Welcome! Check out this list of freediving disciplines!" 
+    #     puts ""
 
-        @disciplines = Discipline.all
-        @disciplines.each.with_index(1) do |discipline, idx|
-            puts "#{idx}. #{discipline}"
-            puts ""
-        end
-    end
+    #     @disciplines = Discipline.all
+    #     @disciplines.each.with_index(1) do |discipline, idx|
+    #         puts "#{idx}. #{discipline}"
+    #         puts ""
+    #     end
+    # end
 
     def list_descriptions
         input = nil 

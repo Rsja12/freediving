@@ -5,7 +5,7 @@ require 'nokogiri'
 class Scraper
 
     attr_accessor :name, :description 
-    
+
     def self.scrape_site
         # iterate through the array that contains both dis and desc. then make a hash with key value pairs
         doc = Nokogiri::HTML(open("https://www.spotmydive.com/en/news/freediving-world-record-by-discipline-aida-ssi-padi"))
@@ -18,7 +18,5 @@ class Scraper
             }
         end
     end
-    binding.pry 
     
-   
 end
