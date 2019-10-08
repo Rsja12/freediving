@@ -1,30 +1,29 @@
 
-require "pry"
+# require "pry"
 
-class Discipline 
+# class Discipline 
 
-    attr_accessor :name, :description
+#     attr_accessor :name, :description
 
-    @@all = [] 
+#     @@all = [] 
 
-    def initialize(name, description)
-        @name = name
-        @description = description
-        @@all << self
-    end
+#     def initialize(name, description)
+#         @name = name
+#         @description = description
+#         @@all << self
+#     end
     
-   def self.all 
-    @@all 
-   end
+#    def self.all 
+#     @@all 
+#    end
 
-   def self.new_from_site
+#    def self.new_from_site
+
+#    end
+
+
     
-   end
+# end
 
 
-    
-end
-
- 
-binding.pry 
 
