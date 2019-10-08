@@ -7,9 +7,9 @@ class Discipline
 
     @@all = [] 
 
-    def initialize(name=nil, description=nil)
-        @name = name 
-        @description = description 
+    def initialize()
+        
+        
         @@all << self
     end
     
@@ -17,12 +17,12 @@ class Discipline
     @@all 
    end
 
-   def self.discipline_maker
-   
+   def self.discipline_maker(array)
+    
    end
     
 end
 
-binding.pry 
+ 
 
 
