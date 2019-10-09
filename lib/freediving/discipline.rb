@@ -2,21 +2,19 @@ require "pry"
 
 class Discipline 
 
-    attr_accessor :name
+    attr_accessor :name, :description
 
     @@all = []
 
-  def initialize(name)
+  def initialize(name, description)
     @name = name 
-    
+    @description = description 
     @@all << self 
-    end
+  end
 
-    def self.all 
+  def self.all 
     @@all 
-    end
-
-# binding.pry 
+  end
 
 end
 
