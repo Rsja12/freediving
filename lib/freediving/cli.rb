@@ -5,6 +5,7 @@ class CLI
     def call  
         self.greeting
         Scraper.scrape 
+        self.prompt 
         loop do 
             input = menu 
             if input == "exit" || input.include?("n")
@@ -21,8 +22,12 @@ class CLI
         puts "\nWelcome!\n"
     end
 
-    def menu 
+    def prompt 
         puts "Would you like to see a list of freediving disciplines?"
+    end
+
+    def menu 
+        # puts "Would you like to see a list of freediving disciplines?"
         input = gets.strip.downcase 
         return input 
     end
@@ -48,8 +53,14 @@ class CLI
         discipline = Discipline.all[index]
         if index >= 0 && index <= 5
             self.show_description(discipline) 
-        else
-            puts "Sorry, I don't know what you mean."
+            puts "\n Choose another one to learn about it, type 'list' to see the list, or type 'exit'."
+        elsif index == 'list'
+            self.list
+        elsif index == 'exit'
+            self.goodbye 
+        else 
+            puts "Sorry I don't understand what that means, but here's the list again: \n"
+            self.list
         end
     end
 
