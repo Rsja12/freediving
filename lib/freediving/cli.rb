@@ -2,12 +2,13 @@ require 'pry'
 
 class CLI 
     
-    def call
+    def call  
         self.greeting
         Scraper.scrape 
         loop do 
             input = menu 
             if input == "exit" || input.include?("n")
+                self.goodbye
                 return
             else
                 self.list 
@@ -47,9 +48,9 @@ class CLI
         puts "\n"
     end
 
-    
-
-    
+    def goodbye 
+        puts "\nThanks for stopping by!"
+    end
 end
 
 
