@@ -12,7 +12,7 @@ class CLI
                 return
             else
                 self.list 
-                self.choice 
+                self.valid 
             end
         end
     end
@@ -35,12 +35,23 @@ class CLI
         end
     end
      
-    def choice 
+    # def choice 
+    #     puts "Choose the number of a discipline to learn more about it!"
+    #     index = gets.strip.to_i - 1 
+    #     discipline = Discipline.all[index]
+    #     self.show_description(discipline)
+    # end 
+
+    def valid
         puts "Choose the number of a discipline to learn more about it!"
-        index = gets.strip.to_i - 1 
+        index = gets.strip.to_i - 1
         discipline = Discipline.all[index]
-        self.show_description(discipline)
-    end 
+        if index >= 0 && index <= 5
+            self.show_description(discipline) 
+        else
+            puts "Sorry, I don't know what you mean."
+        end
+    end
 
     def show_description(discipline)
         puts "\n"
