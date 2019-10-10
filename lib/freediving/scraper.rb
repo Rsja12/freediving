@@ -10,8 +10,10 @@ class Scraper
         discipline_info = doc.css(".article-main__content .text-center").select.with_index { |word, idx| idx.even? }
         
         discipline_info.collect do |element|
+            
             name = element.css("h3").text
             description = element.css("p").text
+
             Discipline.new(name, description)
         end
     end
