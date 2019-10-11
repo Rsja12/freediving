@@ -39,7 +39,6 @@ class CLI
         puts "Choose the number of a discipline to learn more about it!"
         index = gets.strip.to_i - 1
         discipline = Discipline.all[index]
-        binding.pry
         if index >= 0 && index <= Discipline.all.count 
             show_description(discipline) 
             puts "Enter anything to see the list again, or type 'exit'."
